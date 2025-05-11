@@ -1,0 +1,38 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+resources:
+  repositories: 
+  - repository: 'payment-api'
+    type: 'github'
+    endpoint: 'ptm_github_svc'
+    name: 'ptm9966/payment-api'
+    ref: 'ref/heads/mmain'  
+   
+   
+
+stages:
+  - stage: Build
+    displayName: "Build"
+    jobs:
+      - job: Build
+        steps:
+          - checkout: self
+          - checkout: payment-api
+           
+          - script: |
+                   
+                   echo "PWD"
+                   ls -lah
+
+            displayName: ' present working directory'
+        
+        
