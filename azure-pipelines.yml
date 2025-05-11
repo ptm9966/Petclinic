@@ -14,8 +14,7 @@ resources:
   - repository: 'payment-api'
     type: 'github'
     endpoint: 'ptm_github_svc'
-    name: 'ptm9966/payment-api'
-    ref: 'ref/heads/mmain'  
+    name: 'ptm9966/payment-api' 
    
    
 
